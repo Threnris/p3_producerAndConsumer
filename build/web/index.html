@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Upload Service - Consumer Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            border-radius: 10px;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .queue-status {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .queue-bar {
+            width: 100%;
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .queue-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .videos-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .video-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumbnail video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #667eea;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .video-meta {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .video-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-duplicate {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .badge-dropped {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .modal-content video {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .refresh-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+            transition: background 0.2s;
+        }
+
+        .refresh-btn:hover {
+            background: #764ba2;
+        }
+
+        .filter-container {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Media Upload Service - Consumer Dashboard</h1>
+            <div style="color: #666; margin-top: 10px;">
+                Real-time monitoring of video uploads
+                <button class="refresh-btn" onclick="refreshData()">🔄 Refresh</button>
+            </div>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-received">0</div>
+                <div class="stat-label">Total Received</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-processed">0</div>
+                <div class="stat-label">Processed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-dropped">0</div>
+                <div class="stat-label">Dropped</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-duplicates">0</div>
+                <div class="stat-label">Duplicates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-success">0%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+        </div>
+
+        <div class="queue-status">
+            <h3>Queue Status</h3>
+            <div class="queue-bar">
+                <div class="queue-fill" id="queue-fill" style="width: 0%">
+                    <span id="queue-text">0 / 0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="videos-container">
+            <h3>
+                Uploaded Videos
+                <div class="filter-container">
+                    <button class="filter-btn active" onclick="filterVideos('all')">All</button>
+                    <button class="filter-btn" onclick="filterVideos('processed')">Processed</button>
+                    <button class="filter-btn" onclick="filterVideos('duplicates')">Duplicates</button>
+                </div>
+            </h3>
+            <div class="videos-grid" id="videos-grid">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Loading videos...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="video-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <video id="modal-video" controls></video>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8080/api';
+        let currentFilter = 'all';
+        let allVideos = [];
+
+        async function fetchStatistics() {
+            try {
+                const response = await fetch(`${API_BASE}/statistics`);
+                const stats = await response.json();
+                
+                document.getElementById('stat-received').textContent = stats.total_received || 0;
+                document.getElementById('stat-processed').textContent = stats.total_processed || 0;
+                document.getElementById('stat-dropped').textContent = stats.total_dropped || 0;
+                document.getElementById('stat-duplicates').textContent = stats.total_duplicates || 0;
+                
+                const successRate = stats.total_received > 0 
+                    ? ((stats.total_processed / stats.total_received) * 100).toFixed(1)
+                    : 0;
+                document.getElementById('stat-success').textContent = successRate + '%';
+            } catch (error) {
+                console.error('Error fetching statistics:', error);
+            }
+        }
+
+        async function fetchQueueStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/queue`);
+                const queue = await response.json();
+                
+                const percentage = queue.max_size > 0 
+                    ? (queue.current_size / queue.max_size) * 100 
+                    : 0;
+                
+                document.getElementById('queue-fill').style.width = percentage + '%';
+                document.getElementById('queue-text').textContent = 
+                    `${queue.current_size} / ${queue.max_size}`;
+                    
+                if (queue.is_full) {
+                    document.getElementById('queue-fill').style.background = 
+                        'linear-gradient(90deg, #ff6b6b, #ee5a6f)';
+                } else {
+                    document.getElementById('queue-fill').style.background = 
+                        'linear-gradient(90deg, #667eea, #764ba2)';
+                }
+            } catch (error) {
+                console.error('Error fetching queue status:', error);
+            }
+        }
+
+        async function fetchVideos() {
+            try {
+                const response = await fetch(`${API_BASE}/videos`);
+                allVideos = await response.json();
+                displayVideos();
+            } catch (error) {
+                console.error('Error fetching videos:', error);
+                document.getElementById('videos-grid').innerHTML = 
+                    '<div class="loading">Failed to load videos</div>';
+            }
+        }
+
+        function displayVideos() {
+            const grid = document.getElementById('videos-grid');
+            
+            let filteredVideos = allVideos;
+            if (currentFilter === 'processed') {
+                filteredVideos = allVideos.filter(v => !v.is_duplicate);
+            } else if (currentFilter === 'duplicates') {
+                filteredVideos = allVideos.filter(v => v.is_duplicate);
+            }
+
+            if (filteredVideos.length === 0) {
+                grid.innerHTML = '<div class="loading">No videos found</div>';
+                return;
+            }
+
+            grid.innerHTML = filteredVideos.map(video => `
+                <div class="video-card" onclick="playVideo('${video.file_path}', '${video.filename}')">
+                    <div class="video-thumbnail" 
+                         onmouseenter="startPreview(this, '${video.file_path}')"
+                         onmouseleave="stopPreview(this)">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title" title="${video.filename}">${video.filename}</div>
+                        <div class="video-meta">📁 ${formatFileSize(video.file_size)}</div>
+                        <div class="video-meta">👤 Producer ${video.producer_id}</div>
+                        <div class="video-meta">🕐 ${formatTimestamp(video.upload_timestamp)}</div>
+                        <span class="video-badge ${video.is_duplicate ? 'badge-duplicate' : 'badge-success'}">
+                            ${video.is_duplicate ? '⚠️ Duplicate' : '✓ Processed'}
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function startPreview(element, videoPath) {
+            // Create video element for preview
+            const video = document.createElement('video');
+            video.src = videoPath;
+            video.muted = true;
+            video.loop = true;
+            video.style.width = '100%';
+            video.style.height = '100%';
+            video.style.objectFit = 'cover';
+            
+            // Clear existing content and add video
+            element.innerHTML = '';
+            element.appendChild(video);
+            
+            // Play from start for 10 seconds
+            video.currentTime = 0;
+            video.play();
+            
+            setTimeout(() => {
+                if (video.parentElement === element) {
+                    video.pause();
+                }
+            }, 10000);
+        }
+
+        function stopPreview(element) {
+            element.innerHTML = '<div class="play-icon">▶</div>';
+        }
+
+        function playVideo(videoPath, filename) {
+            const modal = document.getElementById('video-modal');
+            const video = document.getElementById('modal-video');
+            
+            video.src = videoPath;
+            modal.classList.add('active');
+            video.play();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('video-modal');
+            const video = document.getElementById('modal-video');
+            
+            video.pause();
+            video.src = '';
+            modal.classList.remove('active');
+        }
+
+        function filterVideos(filter) {
+            currentFilter = filter;
+            
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            displayVideos();
+        }
+
+        function formatFileSize(bytes) {
+            const units = ['B', 'KB', 'MB', 'GB'];
+            let size = bytes;
+            let unitIndex = 0;
+            
+            while (size >= 1024 && unitIndex < units.length - 1) {
+                size /= 1024;
+                unitIndex++;
+            }
+            
+            return size.toFixed(2) + ' ' + units[unitIndex];
+        }
+
+        function formatTimestamp(timestamp) {
+            const date = new Date(timestamp * 1000);
+            return date.toLocaleString();
+        }
+
+        function refreshData() {
+            fetchStatistics();
+            fetchQueueStatus();
+            fetchVideos();
+        }
+
+        // Auto-refresh every 5 seconds
+        setInterval(refreshData, 5000);
+
+        // Initial load
+        refreshData();
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Close modal on background click
+        document.getElementById('video-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'video-modal') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

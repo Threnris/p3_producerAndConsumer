@@ -64,9 +64,12 @@ http://localhost:8080
 
 ### Required
 - Windows 10/11
-- Visual Studio 2019 or 2022
-  - Desktop development with C++
-  - C++ CMake tools
+- **Choose ONE:**
+  - **Visual Studio Code** (Recommended - Lightweight) ⭐
+    - See: `VSCODE_SETUP.md`
+  - **Visual Studio 2019/2022** (Full IDE)
+    - Desktop development with C++
+    - C++ CMake tools
 - vcpkg (C:\vcpkg)
 - 10 GB free space (for dependencies)
 

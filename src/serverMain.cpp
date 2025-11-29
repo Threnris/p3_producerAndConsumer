@@ -9,7 +9,7 @@
 using grpc::Server;
 using grpc::ServerBuilder;
 
-std::unique_ptr<Server> grpc_server;
+std::unique_ptr<Server> grpc_server_instance;
 std::unique_ptr<ConsumerServer> consumer_service;
 std::unique_ptr<WebServer> web_server;
 
@@ -24,8 +24,8 @@ void signalHandler(int signum) {
         web_server->stop();
     }
     
-    if (grpc_server) {
-        grpc_server->Shutdown();
+    if (grpc_server_instance) {
+        grpc_server_instance->Shutdown();
     }
     
     exit(0);
@@ -122,7 +122,7 @@ int main(int argc, char** argv) {
     builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
     builder.RegisterService(consumer_service.get());
     
-    grpc_server = builder.BuildAndStart();
+    grpc_server_instance = builder.BuildAndStart();
     std::cout << "🚀 gRPC Server listening on " << server_address << std::endl;
 
     // Start web server for GUI
@@ -134,7 +134,7 @@ int main(int argc, char** argv) {
     std::cout << "   Press Ctrl+C to stop the server\n" << std::endl;
 
     // Wait for server shutdown
-    grpc_server->Wait();
+    grpc_server_instance->Wait();
 
     return 0;
 }

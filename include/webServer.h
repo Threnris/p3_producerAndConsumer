@@ -5,6 +5,13 @@
 #include <thread>
 #include "consumerServer.h"
 
+#ifdef _WIN32
+    #include <winsock2.h>
+    #include <ws2tcpip.h>
+#else
+    typedef int SOCKET;
+#endif
+
 class WebServer {
 public:
     WebServer(int port, ConsumerServer* consumer_server, 
@@ -16,11 +23,11 @@ public:
 
 private:
     void run();
-    void handleRequest(int client_fd);
-    void handleApiRequest(int client_fd, const std::string& method, 
+    void handleRequest(SOCKET client_fd);
+    void handleApiRequest(SOCKET client_fd, const std::string& method, 
                          const std::string& path);
-    void handleFileRequest(int client_fd, const std::string& path);
-    void sendResponse(int client_fd, int status_code, 
+    void handleFileRequest(SOCKET client_fd, const std::string& path);
+    void sendResponse(SOCKET client_fd, int status_code, 
                      const std::string& content_type,
                      const std::string& body);
 
