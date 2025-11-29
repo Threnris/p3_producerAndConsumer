@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+package mediaupload;
+
+// Video chunk message for streaming upload
+message VideoChunk {
+    string video_id = 1;
+    string filename = 2;
+    bytes data = 3;
+    int32 chunk_number = 4;
+    bool is_last = 5;
+    int32 producer_id = 6;
+    uint64 total_size = 7;
+}
+
+// Upload response
+message UploadResponse {
+    bool success = 1;
+    string message = 2;
+    string video_id = 3;
+}
+
+// Queue status request
+message QueueStatusRequest {
+    // Empty - just checking status
+}
+
+// Queue status response
+message QueueStatusResponse {
+    int32 current_size = 1;
+    int32 max_size = 2;
+    bool is_full = 3;
+    int32 available_slots = 4;
+}
+
+// Statistics request
+message StatisticsRequest {
+    // Empty - requesting stats
+}
+
+// Statistics response
+message StatisticsResponse {
+    int32 total_received = 1;
+    int32 total_processed = 2;
+    int32 total_dropped = 3;
+    int32 total_duplicates = 4;
+    int32 queue_size = 5;
+}
+
+// Video list request
+message VideoListRequest {
+    // Empty - requesting all videos
+}
+
+// Video info for listing
+message VideoInfo {
+    string video_id = 1;
+    string filename = 2;
+    string file_path = 3;
+    int32 producer_id = 4;
+    uint64 file_size = 5;
+    int64 upload_timestamp = 6;
+    bool is_duplicate = 7;
+}
+
+// Video list response
+message VideoListResponse {
+    repeated VideoInfo videos = 1;
+}
+
+// Media upload service
+service MediaUploadService {
+    // Upload video with streaming
+    rpc UploadVideo(stream VideoChunk) returns (UploadResponse);
+    
+    // Get queue status
+    rpc GetQueueStatus(QueueStatusRequest) returns (QueueStatusResponse);
+    
+    // Get statistics
+    rpc GetStatistics(StatisticsRequest) returns (StatisticsResponse);
+    
+    // Get video list
+    rpc GetVideoList(VideoListRequest) returns (VideoListResponse);
+}
