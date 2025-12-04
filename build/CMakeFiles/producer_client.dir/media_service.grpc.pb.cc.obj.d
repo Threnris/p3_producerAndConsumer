@@ -1,6 +1,6 @@
 CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj: \
- C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\media_service.grpc.pb.cc \
- C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\media_service.pb.h \
+ C:\p3_producerAndConsumer\build\media_service.grpc.pb.cc \
+ C:\p3_producerAndConsumer\build\media_service.pb.h \
  C:/msys64/mingw64/include/c++/15.2.0/limits \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
@@ -475,7 +475,7 @@ CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj: \
  C:/msys64/mingw64/include/google/protobuf/io/zero_copy_stream_impl_lite.h \
  C:/msys64/mingw64/include/google/protobuf/map.h \
  C:/msys64/mingw64/include/google/protobuf/reflection.h \
- C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\media_service.grpc.pb.h \
+ C:\p3_producerAndConsumer\build\media_service.grpc.pb.h \
  C:/msys64/mingw64/include/grpcpp/generic/async_generic_service.h \
  C:/msys64/mingw64/include/grpc/support/port_platform.h \
  C:/msys64/mingw64/include/windows.h \

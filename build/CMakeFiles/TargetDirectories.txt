@@ -1,8 +1,8 @@
-C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/CMakeFiles/producer_client.dir
-C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/CMakeFiles/consumer_server.dir
-C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/CMakeFiles/edit_cache.dir
-C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/CMakeFiles/rebuild_cache.dir
-C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/CMakeFiles/list_install_components.dir
-C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/CMakeFiles/install.dir
-C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/CMakeFiles/install/local.dir
-C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/CMakeFiles/install/strip.dir
+C:/p3_producerAndConsumer/build/CMakeFiles/producer_client.dir
+C:/p3_producerAndConsumer/build/CMakeFiles/consumer_server.dir
+C:/p3_producerAndConsumer/build/CMakeFiles/edit_cache.dir
+C:/p3_producerAndConsumer/build/CMakeFiles/rebuild_cache.dir
+C:/p3_producerAndConsumer/build/CMakeFiles/list_install_components.dir
+C:/p3_producerAndConsumer/build/CMakeFiles/install.dir
+C:/p3_producerAndConsumer/build/CMakeFiles/install/local.dir
+C:/p3_producerAndConsumer/build/CMakeFiles/install/strip.dir

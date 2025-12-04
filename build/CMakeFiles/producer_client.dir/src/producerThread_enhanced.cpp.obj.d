@@ -1,6 +1,6 @@
 CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj: \
- C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerThread_enhanced.cpp \
- C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/include/producerThread.h \
+ C:\p3_producerAndConsumer\src\producerThread_enhanced.cpp \
+ C:/p3_producerAndConsumer/include/producerThread.h \
  C:/msys64/mingw64/include/c++/15.2.0/string \
  C:/msys64/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -712,8 +712,8 @@ CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj: \
  C:/msys64/mingw64/include/grpcpp/security/authorization_policy_provider.h \
  C:/msys64/mingw64/include/grpcpp/server_posix.h \
  C:/msys64/mingw64/include/grpcpp/version_info.h \
- C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/media_service.grpc.pb.h \
- C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/media_service.pb.h \
+ C:/p3_producerAndConsumer/build/media_service.grpc.pb.h \
+ C:/p3_producerAndConsumer/build/media_service.pb.h \
  C:/msys64/mingw64/include/google/protobuf/runtime_version.h \
  C:/msys64/mingw64/include/google/protobuf/io/coded_stream.h \
  C:/msys64/mingw64/include/google/protobuf/endian.h \

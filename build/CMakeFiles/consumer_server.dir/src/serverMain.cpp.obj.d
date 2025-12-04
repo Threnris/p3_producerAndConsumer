@@ -1,5 +1,5 @@
 CMakeFiles/consumer_server.dir/src/serverMain.cpp.obj: \
- C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\serverMain.cpp \
+ C:\p3_producerAndConsumer\src\serverMain.cpp \
  C:/msys64/mingw64/include/c++/15.2.0/iostream \
  C:/msys64/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -709,7 +709,7 @@ CMakeFiles/consumer_server.dir/src/serverMain.cpp.obj: \
  C:/msys64/mingw64/include/grpcpp/security/authorization_policy_provider.h \
  C:/msys64/mingw64/include/grpcpp/server_posix.h \
  C:/msys64/mingw64/include/grpcpp/version_info.h \
- C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/include/consumerServer.h \
+ C:/p3_producerAndConsumer/include/consumerServer.h \
  C:/msys64/mingw64/include/c++/15.2.0/queue \
  C:/msys64/mingw64/include/c++/15.2.0/bits/stl_queue.h \
  C:/msys64/mingw64/include/c++/15.2.0/thread \
@@ -721,8 +721,8 @@ CMakeFiles/consumer_server.dir/src/serverMain.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/this_thread_sleep.h \
  C:/msys64/mingw64/include/semaphore.h \
  C:/msys64/mingw64/include/c++/15.2.0/condition_variable \
- C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/media_service.grpc.pb.h \
- C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/media_service.pb.h \
+ C:/p3_producerAndConsumer/build/media_service.grpc.pb.h \
+ C:/p3_producerAndConsumer/build/media_service.pb.h \
  C:/msys64/mingw64/include/google/protobuf/runtime_version.h \
  C:/msys64/mingw64/include/google/protobuf/io/coded_stream.h \
  C:/msys64/mingw64/include/google/protobuf/endian.h \
@@ -827,5 +827,5 @@ CMakeFiles/consumer_server.dir/src/serverMain.cpp.obj: \
  C:/msys64/mingw64/include/grpcpp/support/stub_options.h \
  C:/msys64/mingw64/include/grpcpp/ports_def.inc \
  C:/msys64/mingw64/include/grpcpp/ports_undef.inc \
- C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/include/webServer.h \
- C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/include/consumerServer.h
+ C:/p3_producerAndConsumer/include/webServer.h \
+ C:/p3_producerAndConsumer/include/consumerServer.h

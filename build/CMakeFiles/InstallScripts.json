@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build/cmake_install.cmake"
+		"C:/p3_producerAndConsumer/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

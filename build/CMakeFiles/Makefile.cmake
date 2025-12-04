@@ -7,11 +7,6 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/CMakeLists.txt"
-  "CMakeFiles/4.2.0/CMakeCCompiler.cmake"
-  "CMakeFiles/4.2.0/CMakeCXXCompiler.cmake"
-  "CMakeFiles/4.2.0/CMakeRCCompiler.cmake"
-  "CMakeFiles/4.2.0/CMakeSystem.cmake"
   "C:/msys64/mingw64/lib/cmake/absl/abslConfig.cmake"
   "C:/msys64/mingw64/lib/cmake/absl/abslConfigVersion.cmake"
   "C:/msys64/mingw64/lib/cmake/absl/abslTargets-release.cmake"
@@ -169,6 +164,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake"
   "C:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake"
   "C:/msys64/mingw64/share/cmake/Modules/SelectLibraryConfigurations.cmake"
+  "C:/p3_producerAndConsumer/CMakeLists.txt"
+  "CMakeFiles/4.2.0/CMakeCCompiler.cmake"
+  "CMakeFiles/4.2.0/CMakeCXXCompiler.cmake"
+  "CMakeFiles/4.2.0/CMakeRCCompiler.cmake"
+  "CMakeFiles/4.2.0/CMakeSystem.cmake"
   )
 
 # The corresponding makefile is:

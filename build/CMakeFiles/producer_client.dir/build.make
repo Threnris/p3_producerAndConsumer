@@ -52,10 +52,10 @@ RM = C:\msys64\mingw64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer
+CMAKE_SOURCE_DIR = C:\p3_producerAndConsumer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build
+CMAKE_BINARY_DIR = C:\p3_producerAndConsumer\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/producer_client.dir/depend.make
@@ -68,9 +68,9 @@ include CMakeFiles/producer_client.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/producer_client.dir/flags.make
 
-media_service.pb.cc: C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/media_service.proto
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating media_service.pb.cc, media_service.pb.h, media_service.grpc.pb.cc, media_service.grpc.pb.h"
-	C:\msys64\mingw64\bin\protoc.exe --grpc_out=C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build --cpp_out=C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/build -IC:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer --plugin=protoc-gen-grpc=C:/msys64/mingw64/bin/grpc_cpp_plugin.exe C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/media_service.proto
+media_service.pb.cc: C:/p3_producerAndConsumer/media_service.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating media_service.pb.cc, media_service.pb.h, media_service.grpc.pb.cc, media_service.grpc.pb.h"
+	C:\msys64\mingw64\bin\protoc.exe --grpc_out=C:/p3_producerAndConsumer/build --cpp_out=C:/p3_producerAndConsumer/build -IC:/p3_producerAndConsumer --plugin=protoc-gen-grpc=C:/msys64/mingw64/bin/grpc_cpp_plugin.exe C:/p3_producerAndConsumer/media_service.proto
 
 media_service.pb.h: media_service.pb.cc
 	@$(CMAKE_COMMAND) -E touch_nocreate media_service.pb.h
@@ -86,78 +86,78 @@ CMakeFiles/producer_client.dir/codegen:
 
 CMakeFiles/producer_client.dir/src/producerMain.cpp.obj: CMakeFiles/producer_client.dir/flags.make
 CMakeFiles/producer_client.dir/src/producerMain.cpp.obj: CMakeFiles/producer_client.dir/includes_CXX.rsp
-CMakeFiles/producer_client.dir/src/producerMain.cpp.obj: C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/src/producerMain.cpp
+CMakeFiles/producer_client.dir/src/producerMain.cpp.obj: C:/p3_producerAndConsumer/src/producerMain.cpp
 CMakeFiles/producer_client.dir/src/producerMain.cpp.obj: CMakeFiles/producer_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/producer_client.dir/src/producerMain.cpp.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/src/producerMain.cpp.obj -MF CMakeFiles\producer_client.dir\src\producerMain.cpp.obj.d -o CMakeFiles\producer_client.dir\src\producerMain.cpp.obj -c C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerMain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/producer_client.dir/src/producerMain.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/src/producerMain.cpp.obj -MF CMakeFiles\producer_client.dir\src\producerMain.cpp.obj.d -o CMakeFiles\producer_client.dir\src\producerMain.cpp.obj -c C:\p3_producerAndConsumer\src\producerMain.cpp
 
 CMakeFiles/producer_client.dir/src/producerMain.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/producer_client.dir/src/producerMain.cpp.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerMain.cpp > CMakeFiles\producer_client.dir\src\producerMain.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\p3_producerAndConsumer\src\producerMain.cpp > CMakeFiles\producer_client.dir\src\producerMain.cpp.i
 
 CMakeFiles/producer_client.dir/src/producerMain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/producer_client.dir/src/producerMain.cpp.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerMain.cpp -o CMakeFiles\producer_client.dir\src\producerMain.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\p3_producerAndConsumer\src\producerMain.cpp -o CMakeFiles\producer_client.dir\src\producerMain.cpp.s
 
 CMakeFiles/producer_client.dir/src/producerClient.cpp.obj: CMakeFiles/producer_client.dir/flags.make
 CMakeFiles/producer_client.dir/src/producerClient.cpp.obj: CMakeFiles/producer_client.dir/includes_CXX.rsp
-CMakeFiles/producer_client.dir/src/producerClient.cpp.obj: C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/src/producerClient.cpp
+CMakeFiles/producer_client.dir/src/producerClient.cpp.obj: C:/p3_producerAndConsumer/src/producerClient.cpp
 CMakeFiles/producer_client.dir/src/producerClient.cpp.obj: CMakeFiles/producer_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/producer_client.dir/src/producerClient.cpp.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/src/producerClient.cpp.obj -MF CMakeFiles\producer_client.dir\src\producerClient.cpp.obj.d -o CMakeFiles\producer_client.dir\src\producerClient.cpp.obj -c C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerClient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/producer_client.dir/src/producerClient.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/src/producerClient.cpp.obj -MF CMakeFiles\producer_client.dir\src\producerClient.cpp.obj.d -o CMakeFiles\producer_client.dir\src\producerClient.cpp.obj -c C:\p3_producerAndConsumer\src\producerClient.cpp
 
 CMakeFiles/producer_client.dir/src/producerClient.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/producer_client.dir/src/producerClient.cpp.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerClient.cpp > CMakeFiles\producer_client.dir\src\producerClient.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\p3_producerAndConsumer\src\producerClient.cpp > CMakeFiles\producer_client.dir\src\producerClient.cpp.i
 
 CMakeFiles/producer_client.dir/src/producerClient.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/producer_client.dir/src/producerClient.cpp.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerClient.cpp -o CMakeFiles\producer_client.dir\src\producerClient.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\p3_producerAndConsumer\src\producerClient.cpp -o CMakeFiles\producer_client.dir\src\producerClient.cpp.s
 
 CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj: CMakeFiles/producer_client.dir/flags.make
 CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj: CMakeFiles/producer_client.dir/includes_CXX.rsp
-CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj: C:/Users/USER/OneDrive/Documents/GitHub/p3_producerAndConsumer/src/producerThread_enhanced.cpp
+CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj: C:/p3_producerAndConsumer/src/producerThread_enhanced.cpp
 CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj: CMakeFiles/producer_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj -MF CMakeFiles\producer_client.dir\src\producerThread_enhanced.cpp.obj.d -o CMakeFiles\producer_client.dir\src\producerThread_enhanced.cpp.obj -c C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerThread_enhanced.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.obj -MF CMakeFiles\producer_client.dir\src\producerThread_enhanced.cpp.obj.d -o CMakeFiles\producer_client.dir\src\producerThread_enhanced.cpp.obj -c C:\p3_producerAndConsumer\src\producerThread_enhanced.cpp
 
 CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerThread_enhanced.cpp > CMakeFiles\producer_client.dir\src\producerThread_enhanced.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\p3_producerAndConsumer\src\producerThread_enhanced.cpp > CMakeFiles\producer_client.dir\src\producerThread_enhanced.cpp.i
 
 CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/producer_client.dir/src/producerThread_enhanced.cpp.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\src\producerThread_enhanced.cpp -o CMakeFiles\producer_client.dir\src\producerThread_enhanced.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\p3_producerAndConsumer\src\producerThread_enhanced.cpp -o CMakeFiles\producer_client.dir\src\producerThread_enhanced.cpp.s
 
 CMakeFiles/producer_client.dir/media_service.pb.cc.obj: CMakeFiles/producer_client.dir/flags.make
 CMakeFiles/producer_client.dir/media_service.pb.cc.obj: CMakeFiles/producer_client.dir/includes_CXX.rsp
 CMakeFiles/producer_client.dir/media_service.pb.cc.obj: media_service.pb.cc
 CMakeFiles/producer_client.dir/media_service.pb.cc.obj: CMakeFiles/producer_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/producer_client.dir/media_service.pb.cc.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/media_service.pb.cc.obj -MF CMakeFiles\producer_client.dir\media_service.pb.cc.obj.d -o CMakeFiles\producer_client.dir\media_service.pb.cc.obj -c C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\media_service.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/producer_client.dir/media_service.pb.cc.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/media_service.pb.cc.obj -MF CMakeFiles\producer_client.dir\media_service.pb.cc.obj.d -o CMakeFiles\producer_client.dir\media_service.pb.cc.obj -c C:\p3_producerAndConsumer\build\media_service.pb.cc
 
 CMakeFiles/producer_client.dir/media_service.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/producer_client.dir/media_service.pb.cc.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\media_service.pb.cc > CMakeFiles\producer_client.dir\media_service.pb.cc.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\p3_producerAndConsumer\build\media_service.pb.cc > CMakeFiles\producer_client.dir\media_service.pb.cc.i
 
 CMakeFiles/producer_client.dir/media_service.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/producer_client.dir/media_service.pb.cc.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\media_service.pb.cc -o CMakeFiles\producer_client.dir\media_service.pb.cc.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\p3_producerAndConsumer\build\media_service.pb.cc -o CMakeFiles\producer_client.dir\media_service.pb.cc.s
 
 CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj: CMakeFiles/producer_client.dir/flags.make
 CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj: CMakeFiles/producer_client.dir/includes_CXX.rsp
 CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj: media_service.grpc.pb.cc
 CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj: CMakeFiles/producer_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj -MF CMakeFiles\producer_client.dir\media_service.grpc.pb.cc.obj.d -o CMakeFiles\producer_client.dir\media_service.grpc.pb.cc.obj -c C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\media_service.grpc.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.obj -MF CMakeFiles\producer_client.dir\media_service.grpc.pb.cc.obj.d -o CMakeFiles\producer_client.dir\media_service.grpc.pb.cc.obj -c C:\p3_producerAndConsumer\build\media_service.grpc.pb.cc
 
 CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\media_service.grpc.pb.cc > CMakeFiles\producer_client.dir\media_service.grpc.pb.cc.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\p3_producerAndConsumer\build\media_service.grpc.pb.cc > CMakeFiles\producer_client.dir\media_service.grpc.pb.cc.i
 
 CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/producer_client.dir/media_service.grpc.pb.cc.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\media_service.grpc.pb.cc -o CMakeFiles\producer_client.dir\media_service.grpc.pb.cc.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\p3_producerAndConsumer\build\media_service.grpc.pb.cc -o CMakeFiles\producer_client.dir\media_service.grpc.pb.cc.s
 
 # Object files for target producer_client
 producer_client_OBJECTS = \
@@ -280,7 +280,7 @@ producer_client.exe: C:/msys64/mingw64/lib/libaddress_sorting.dll.a
 producer_client.exe: CMakeFiles/producer_client.dir/linkLibs.rsp
 producer_client.exe: CMakeFiles/producer_client.dir/objects1.rsp
 producer_client.exe: CMakeFiles/producer_client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable producer_client.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\p3_producerAndConsumer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable producer_client.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\producer_client.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -295,6 +295,6 @@ CMakeFiles/producer_client.dir/depend: media_service.grpc.pb.cc
 CMakeFiles/producer_client.dir/depend: media_service.grpc.pb.h
 CMakeFiles/producer_client.dir/depend: media_service.pb.cc
 CMakeFiles/producer_client.dir/depend: media_service.pb.h
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build C:\Users\USER\OneDrive\Documents\GitHub\p3_producerAndConsumer\build\CMakeFiles\producer_client.dir\DependInfo.cmake "--color=$(COLOR)" producer_client
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\p3_producerAndConsumer C:\p3_producerAndConsumer C:\p3_producerAndConsumer\build C:\p3_producerAndConsumer\build C:\p3_producerAndConsumer\build\CMakeFiles\producer_client.dir\DependInfo.cmake "--color=$(COLOR)" producer_client
 .PHONY : CMakeFiles/producer_client.dir/depend
 
