@@ -1,0 +1,31 @@
+services:
+  consumer:
+    image: media-upload-consumer:latest
+    build: .
+    container_name: consumer-node
+    command: ./consumer_server -c 4 -q 20 -p 50051 -w 8080
+    ports:
+      - "8080:8080"
+      - "50051:50051"
+    volumes:
+      - ./uploaded_videos:/app/uploaded_videos
+    networks:
+      - media-net
+
+  # FIX: 'producer' must be indented by 2 spaces to match 'consumer'
+  producer:
+    image: media-upload-producer:latest
+    build: .
+    container_name: producer-node
+    # Manual mode: No entrypoint, just the command
+    command: ./producer_client -p 1 -s consumer:50051 -i /app/video_files
+    depends_on:
+      - consumer
+    volumes:
+      - ./video_files:/app/video_files
+    networks:
+      - media-net
+
+networks:
+  media-net:
+    driver: bridge
