@@ -42,6 +42,8 @@ Access the Dashboard Open your web browser to http://localhost:8080 to view the 
 
 View Output Processed videos will appear in your local uploaded_videos/ folder.
 
+When uploading make sure to run the docker node for producer and refresh if needed
+
 
 
 ## Usage
