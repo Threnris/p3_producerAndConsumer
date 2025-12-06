@@ -42,22 +42,7 @@ Access the Dashboard Open your web browser to http://localhost:8080 to view the 
 
 View Output Processed videos will appear in your local uploaded_videos/ folder.
 
-### Build
 
-```bash
-# Create build directory
-mkdir build && cd build
-
-# Configure
-cmake ..
-
-# Build
-make -j$(nproc)
-
-# Executables will be in build/
-# - consumer_server
-# - producer_client
-```
 
 ## Usage
 
