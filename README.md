@@ -1,10 +1,10 @@
-# Media Upload Service - Producer-Consumer System
+<img width="1897" height="686" alt="image" src="https://github.com/user-attachments/assets/5ad697ba-88c6-40d2-88ff-0862c208a998" /># Media Upload Service - Producer-Consumer System
 
 A distributed media upload service implementing producer-consumer pattern with gRPC communication, queue management, and web-based GUI.
 
 ## Features
 
-### Core Features ✅
+### Core Features 
 
 1. **Producer Threads** - Multiple producers reading from separate folders
 2. **Consumer Threads** - Concurrent processing of uploaded videos
@@ -12,7 +12,7 @@ A distributed media upload service implementing producer-consumer pattern with g
 4. **Queue Management** - Leaky bucket design with configurable capacity
 5. **Web-based GUI** - Real-time dashboard with video preview and playback
 
-### Bonus Features ⭐
+### Bonus Features 
 
 1. **Queue Status Notification** - Producers check queue status before uploading
 2. **Duplicate Detection** - SHA-256 hash-based duplicate identification
@@ -20,35 +20,8 @@ A distributed media upload service implementing producer-consumer pattern with g
 4. **10-Second Preview** - Hover over video cards to see preview
 5. **Full Playback** - Click to watch complete videos
 
-## Architecture
 
-```
-┌─────────────┐         gRPC          ┌─────────────┐
-│  Producer 1 │────┐                ┌──│ Consumer 1  │
-├─────────────┤    │                │  ├─────────────┤
-│  Producer 2 │────┤   Network      ├──│ Consumer 2  │
-├─────────────┤    │   Stream       │  ├─────────────┤
-│  Producer 3 │────┴────────────────┴──│ Consumer 3  │
-└─────────────┘                        └─────────────┘
-                                              │
-                                              ▼
-                                       ┌─────────────┐
-                                       │    Queue    │
-                                       │  (Leaky)    │
-                                       └─────────────┘
-                                              │
-                                              ▼
-                                       ┌─────────────┐
-                                       │   Storage   │
-                                       │ + Metadata  │
-                                       └─────────────┘
-                                              │
-                                              ▼
-                                       ┌─────────────┐
-                                       │   Web GUI   │
-                                       │  (HTTP:8080)│
-                                       └─────────────┘
-```
+
 
 ## System Requirements
 
@@ -57,22 +30,17 @@ A distributed media upload service implementing producer-consumer pattern with g
 - gRPC and Protocol Buffers
 - OpenSSL (for SHA-256 hashing)
 - Web browser (for GUI)
+- Docker Desktop
 
-## Building the Project
+## Setup and steps to run
+Ensure docker files are in place and have docker ready
 
-### Install Dependencies (Ubuntu/Debian)
+Build and Run Open your terminal in the project folder and run:
+docker-compose up --build
 
-```bash
-sudo apt-get update
-sudo apt-get install -y \
-    build-essential \
-    cmake \
-    libgrpc++-dev \
-    libprotobuf-dev \
-    protobuf-compiler-grpc \
-    libssl-dev \
-    pkg-config
-```
+Access the Dashboard Open your web browser to http://localhost:8080 to view the realtime status of uploads
+
+View Output Processed videos will appear in your local uploaded_videos/ folder.
 
 ### Build
 
@@ -216,14 +184,14 @@ Example: `./producer_client -p 5`
 ║  Media Upload Service - Consumer Server       ║
 ╚════════════════════════════════════════════════╝
 
-📊 Configuration:
+ Configuration:
   Consumer threads: 4
   Queue capacity:   10 (Leaky bucket)
   gRPC port:        50051
   Web GUI port:     8080
   Output directory: ./uploaded_videos
 
-✨ Features enabled:
+ Features enabled:
   ✓ Queue management (leaky bucket)
   ✓ Duplicate detection (SHA-256 hashing)
   ✓ Queue status API for producers
@@ -231,10 +199,10 @@ Example: `./producer_client -p 5`
   ✓ Real-time statistics
 
 ✓ Started 4 consumer workers
-🚀 gRPC Server listening on 0.0.0.0:50051
-🌐 Web GUI available at http://localhost:8080
+ gRPC Server listening on 0.0.0.0:50051
+ Web GUI available at http://localhost:8080
 
-✅ Server is ready to accept uploads!
+Server is ready to accept uploads!
 ```
 
 **Producer Client:**
@@ -269,35 +237,7 @@ uploaded_videos/
     └── VID_2_1702345690_789.jpg
 ```
 
-## Implementation Details
 
-### Queue Management (Leaky Bucket)
-
-- Fixed capacity defined by `-q` parameter
-- Videos beyond capacity are dropped
-- Producers notified of queue status
-- FIFO processing order
-
-### Duplicate Detection
-
-- SHA-256 hash calculated for each video
-- Hash stored in set for O(1) lookup
-- Duplicates rejected before processing
-- Original file preserved, duplicate logged
-
-### Video Preview
-
-- JavaScript creates `<video>` element on hover
-- Auto-plays for 10 seconds
-- Muted playback
-- Starts from beginning
-
-### gRPC Streaming
-
-- Chunk size: 64KB
-- Progress updates every 10 chunks
-- Metadata in first chunk
-- `is_last` flag in final chunk
 
 ## API Endpoints
 
@@ -327,7 +267,7 @@ uploaded_videos/
 
 ## Bonus Features Explained
 
-### 1. Queue Full Notification ✅
+### 1. Queue Full Notification 
 
 **Implementation:** Producers call `GetQueueStatus()` RPC before each upload.
 
@@ -451,27 +391,7 @@ ffmpeg -f lavfi -i testsrc=duration=10:size=1280x720:rate=30 test2.mp4
 watch -n 1 'curl -s http://localhost:8080/api/statistics | jq .'
 ```
 
-## Project Structure
 
-```
-MediaUploadService/
-├── CMakeLists.txt
-├── README.md
-├── media_service.proto
-├── include/
-│   ├── producerClient.h
-│   ├── producerThread.h
-│   ├── consumerServer.h
-│   └── webServer.h
-├── producerMain.cpp
-├── producerClient.cpp
-├── producerThread_enhanced.cpp
-├── serverMain.cpp
-├── consumerServer.cpp
-├── webServer.cpp
-└── web/
-    └── index.html
-```
 
 ## License
 
