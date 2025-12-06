@@ -1,4 +1,4 @@
-<img width="1897" height="686" alt="image" src="https://github.com/user-attachments/assets/5ad697ba-88c6-40d2-88ff-0862c208a998" /># Media Upload Service - Producer-Consumer System
+Media Upload Service - Producer-Consumer System
 
 A distributed media upload service implementing producer-consumer pattern with gRPC communication, queue management, and web-based GUI.
 
