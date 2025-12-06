@@ -272,7 +272,7 @@ bool ProducerThread::checkQueueStatus() {
 }
 ```
 
-### 2. Duplicate Detection ✅
+### 2. Duplicate Detection 
 
 **Implementation:** SHA-256 hash calculated on consumer side.
 
